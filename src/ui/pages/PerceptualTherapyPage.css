@@ -1,0 +1,24 @@
+.perceptual-therapy-page {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.page-transition {
+  transition: all 0.3s ease;
+}
+
+/* 为了确保卡片在淡绿色背景上有良好的可读性 */
+.perceptual-therapy-page .card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 适配现有样式 */
+@media (max-width: 768px) {
+  .perceptual-therapy-page {
+    padding: 15px;
+  }
+}

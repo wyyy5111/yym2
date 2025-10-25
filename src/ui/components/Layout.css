@@ -1,0 +1,11 @@
+/* Layout组件样式 */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 70px; /* 为底部导航栏留出空间 */
+}

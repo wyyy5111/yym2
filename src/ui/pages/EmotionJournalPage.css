@@ -1,0 +1,651 @@
+/* 情绪日志页面样式 */
+.emotion-journal-container {
+  padding: 20px 20px 100px; /* 底部添加足够的内边距，防止被底部Tab栏遮挡 */
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  min-height: 100vh;
+  background-image: url('../../assets/img/880706cc1c7a17425a74f0376386517f.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+/* 应用标题样式 */
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px 0;
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: '幼圆', cursive;
+  text-align: center;
+}
+
+.brand-icon {
+  font-size: 28px;
+  margin-right: 8px;
+  transform: rotate(-5deg);
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 5px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.brand-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  font-style: normal;
+}
+
+/* 页面头部 */
+.journal-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.journal-header h1 {
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.journal-subtitle {
+  color: #666;
+  font-size: 16px;
+}
+
+/* 统计卡片 */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.stat-card h3 {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4ecdc4;
+  margin: 0;
+  line-height: 1;
+}
+
+.stat-unit {
+  color: #999;
+  font-size: 14px;
+  margin: 5px 0 0 0;
+}
+
+.stat-emoji {
+  font-size: 48px;
+  margin: 0;
+  line-height: 1;
+}
+
+/* 按钮样式由全局button.css提供 */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.action-buttons .btn {
+  flex: 1;
+  max-width: 200px;
+}
+
+/* 筛选器 */
+.filters {
+  margin-bottom: 30px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4ecdc4;
+}
+
+.emotion-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.filter-btn.active {
+  color: white;
+  border-color: transparent;
+}
+
+.filter-btn:first-child.active {
+  background: #4ecdc4;
+}
+
+/* 日记列表 */
+.entries-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loading, .empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.empty-state p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* 日记卡片 */
+.entry-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px 15px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  word-break: break-word;
+}
+
+.entry-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.emotion-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.emotion-emoji {
+  font-size: 24px;
+}
+
+.emotion-label {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.intensity-indicator {
+  display: flex;
+  gap: 2px;
+}
+
+.intensity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.entry-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999;
+  font-size: 14px;
+}
+
+.entry-date {
+  font-weight: 500;
+}
+
+.entry-weather {
+  font-size: 20px;
+}
+
+.entry-thoughts {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  white-space: pre-wrap;
+}
+
+.entry-activities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.activity-tag {
+  background: #f0f0f0;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  color: #4ecdc4;
+  font-size: 13px;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: auto; /* 推到右侧 */
+}
+
+.action-icon {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.action-icon:hover {
+  background: #f0f0f0;
+}
+
+/* 表单样式 */
+.entry-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.entry-form {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.form-group {
+  padding: 0 20px;
+  margin: 20px 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4ecdc4;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* 情绪选项 */
+.emotion-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.emotion-option {
+  background: transparent;
+  border: 2px solid #ddd;
+  padding: 15px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.emotion-option:hover {
+  border-color: #4ecdc4;
+}
+
+.emotion-option.selected {
+  transform: scale(1.05);
+}
+
+.emotion-option .emoji {
+  font-size: 32px;
+}
+
+.emotion-option .label {
+  font-size: 14px;
+}
+
+/* 滑块样式 */
+.range-control {
+  width: 100%;
+  height: 6px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.range-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4ecdc4;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(78, 205, 196, 0.4);
+}
+
+/* 活动选项 */
+.activity-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.activity-option {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.activity-option:hover {
+  background: #e0e0e0;
+}
+
+.activity-option.selected {
+  background: #4ecdc4;
+  color: white;
+  border-color: #4ecdc4;
+}
+
+/* 天气选项 */
+.weather-options {
+  display: flex;
+  gap: 15px;
+}
+
+.weather-option {
+  background: transparent;
+  border: 2px solid #ddd;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-option:hover {
+  border-color: #4ecdc4;
+}
+
+.weather-option.selected {
+  background: #f0f9f8;
+  border-color: #4ecdc4;
+  transform: scale(1.1);
+}
+
+/* 表单操作按钮 */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  justify-content: flex-end;
+}
+
+/* 按钮样式由全局button.css提供 */
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .emotion-journal-container {
+    padding: 15px 15px 100px;
+  }
+  
+  .brand-title {
+    font-size: 22px;
+  }
+  
+  .brand-subtitle {
+    font-size: 12px;
+  }
+  
+  .journal-header h1 {
+    font-size: 24px;
+  }
+  
+  .journal-subtitle {
+    font-size: 14px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .action-buttons .btn {
+    max-width: 100%;
+  }
+  
+  .stat-card {
+    padding: 15px;
+  }
+  
+  .stat-value {
+    font-size: 30px;
+  }
+  
+  .stat-emoji {
+    font-size: 40px;
+  }
+  
+  .emotion-filter {
+    gap: 8px;
+  }
+  
+  .filter-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .emotion-journal-container {
+    padding: 10px 10px 90px;
+  }
+  
+  .brand-title {
+    font-size: 20px;
+  }
+  
+  .journal-header h1 {
+    font-size: 22px;
+  }
+  
+  .search-input {
+    font-size: 16px; /* 防止iOS缩放 */
+    padding: 15px 16px;
+    border-radius: 25px;
+  }
+  
+  .entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .emotion-badge {
+    padding: 6px 12px;
+  }
+  
+  .emotion-emoji {
+    font-size: 20px;
+  }
+  
+  .entry-meta {
+    font-size: 13px;
+    gap: 8px;
+  }
+  
+  .entry-thoughts {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .activity-tag {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-actions button {
+    min-height: 44px;
+    font-size: 16px;
+  }
+}

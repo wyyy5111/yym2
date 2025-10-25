@@ -1,0 +1,444 @@
+/* 脑机接口页面手绘风格样式 */
+.bci-page-container {
+  padding: 10px 10px 100px; /* 底部添加足够的内边距，防止被底部Tab栏遮挡 */
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bci-page-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffcdd2' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.bci-page-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-title {
+  text-align: center;
+  font-family: 'Microsoft YaHei', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #88E0E1;
+  margin: 8px auto 0;
+  border-radius: 1.5px;
+}
+
+/* 标签导航样式 */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tab-button {
+  padding: 8px 16px;
+  border: 2px solid #ffb7b2;
+  background-color: white;
+  color: #ff7e67;
+  border-radius: 30px;
+  font-family: 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0 rgba(255, 126, 103, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  border: 2px dashed transparent;
+  pointer-events: none;
+}
+
+.tab-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 rgba(255, 126, 103, 0.3);
+  border-color: #ff9a8b;
+}
+
+.tab-button.active {
+  background-color: #ff7e67;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 rgba(220, 70, 50, 0.4);
+}
+
+.tab-button.active::before {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* 标签内容样式 */
+.tab-content {
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 2px solid #ffdac1;
+  position: relative;
+}
+
+.tab-content::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background-color: transparent;
+  border: 2px solid #ffb7b2;
+  border-radius: 24px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* 状态面板样式 */
+.status-panel {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff5f5;
+  border-radius: 12px;
+  border: 2px dashed #ffb7b2;
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #ffdac1;
+}
+
+.status-label {
+  font-size: 12px;
+  color: #666;
+  font-family: 'Microsoft YaHei', sans-serif;
+}
+
+.status-value {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Microsoft YaHei', sans-serif;
+}
+
+.attention-value {
+  color: #667eea;
+  font-size: 20px;
+}
+
+/* 脑电显示样式 */
+.eeg-display {
+  margin-bottom: 20px;
+}
+
+/* 注意力网络评估容器样式 - 防止变长 */
+.attention-network-container {
+  margin-bottom: 10px;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.attention-network-container h3 {
+  margin-bottom: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.attention-network-container > div.chart-container {
+  height: 140px !important;
+  max-height: 140px;
+  overflow: hidden;
+  padding: 8px;
+  margin-bottom: 0;
+}
+
+.attention-network-container canvas {
+  max-height: 120px !important;
+  height: 120px !important;
+}
+
+.eeg-display h3 {
+  color: #ff7e67;
+  font-family: 'Microsoft YaHei', sans-serif;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.chart-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ffdac1;
+  min-height: 250px;
+  position: relative;
+}
+
+.chart-container h3 {
+  color: #ff7e67;
+  font-family: 'Microsoft YaHei', sans-serif;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+}
+
+.chart-container h3::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 Q20,2 40,1 T80,1' fill='none' stroke='%23ffb7b2' stroke-width='1' stroke-linecap='round' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 8px auto 0;
+}
+
+.chart-container canvas {
+  max-height: 250px;
+}
+
+/* 按钮样式由全局button.css提供 */
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 79, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 77, 79, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 79, 0);
+  }
+}
+
+/* 时间范围选择器 */
+.time-range-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.time-range-selector button {
+  padding: 8px 16px;
+  border: 2px solid #ffdac1;
+  background-color: white;
+  color: #ff7e67;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-family: 'Microsoft YaHei', sans-serif;
+}
+
+.time-range-selector button:hover {
+  border-color: #ffb7b2;
+  transform: translateY(-2px);
+}
+
+.time-range-selector button.active {
+  background-color: #ff7e67;
+  color: white;
+  border-color: #ff7e67;
+}
+
+/* 图表网格布局 */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* 洞察卡片样式 */
+.attention-insights,
+.emotion-insights,
+.visualization-insights {
+  margin-top: 30px;
+}
+
+.attention-insights h3,
+.emotion-insights h3,
+.visualization-insights h3 {
+  color: #ff7e67;
+  font-family: 'Microsoft YaHei', sans-serif;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.insight-card {
+  background-color: #fff5f5;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 2px dashed #ffdac1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.insight-card h4 {
+  color: #ff7e67;
+  font-family: 'Microsoft YaHei', sans-serif;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.insight-card p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Microsoft YaHei', sans-serif;
+}
+
+/* 专业分析报告样式 */
+.professional-analysis-section {
+  font-family: 'Microsoft YaHei', sans-serif;
+}
+
+.analysis-report {
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 2px solid #ffd700;
+}
+
+.report-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ffd700;
+}
+
+.report-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.report-section h4 {
+  color: #ffd700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.report-section h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #ffd700;
+  border-radius: 50%;
+}
+
+.report-section p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.report-section ul {
+  color: #666;
+  padding-left: 20px;
+}
+
+.report-section li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 10px;
+}
+
+.report-section li::before {
+  content: "✦";
+  position: absolute;
+  left: -10px;
+  color: #ffd700;
+}
+
+/* 导航提示样式 */
+.navigation-hint {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #999;
+  font-family: 'Microsoft YaHei', sans-serif;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .bci-page-container {
+    padding: 15px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+  
+  .tab-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .tab-content {
+    padding: 20px 15px;
+  }
+  
+  .status-panel {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-container {
+    padding: 15px;
+    min-height: 250px;
+  }
+}

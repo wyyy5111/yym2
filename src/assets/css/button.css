@@ -1,0 +1,254 @@
+/* 全局按钮样式 - 正式传统风格 */
+
+/* 重置按钮基础样式 */
+button.btn, a.btn {
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 0;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  vertical-align: middle;
+  white-space: nowrap;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transform: translateY(0);
+  box-sizing: border-box;
+}
+
+/* 主要按钮 - 青蓝色 */
+.btn-primary {
+  background-color: #88E0E1;
+  border: 1px solid #88E0E1;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #77d0d1;
+  border-color: #66c0c1;
+  color: white;
+  box-shadow: 0 4px 8px rgba(136, 224, 225, 0.4);
+}
+
+.btn-primary:active {
+  background-color: #66c0c1;
+  border-color: #55b0b1;
+}
+
+.btn-primary:disabled {
+  background-color: #88E0E1;
+  border-color: #88E0E1;
+  color: white;
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* 次要按钮 - 黄色 */
+.btn-secondary {
+  background-color: #ffd700;
+  border: 1px solid #ffd700;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #ffc107;
+  border-color: #ffab00;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+}
+
+/* 响应式按钮样式 */
+@media (max-width: 768px) {
+  button.btn, a.btn {
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  button.btn, a.btn {
+    padding: 12px 16px;
+    min-height: 44px; /* 提高触摸区域 */
+    font-size: 16px; /* 防止iOS缩放 */
+    border-radius: 8px;
+  }
+  
+  /* 确保按钮文本不会溢出 */
+  button.btn, a.btn {
+    word-break: break-word;
+    white-space: normal;
+  }
+}
+
+.btn-secondary:active {
+  background-color: #ffab00;
+  border-color: #ff8f00;
+}
+
+.btn-secondary:disabled {
+  background-color: #ffd700;
+  border-color: #ffd700;
+  color: #333;
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* 成功按钮 */
+.btn-success {
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  color: white;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+
+/* 危险按钮 */
+.btn-danger {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+  color: white;
+}
+
+/* 次要轮廓按钮 */
+.btn-outline-secondary {
+  background-color: transparent;
+  border: 1px solid #adb5bd;
+  color: #495057;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+  color: #212529;
+  box-shadow: 0 4px 8px rgba(173, 181, 189, 0.4);
+}
+
+.btn-outline-secondary:active {
+  background-color: #dee2e6;
+  border-color: #adb5bd;
+}
+
+.btn-outline-secondary:disabled {
+  background-color: transparent;
+  border-color: #dee2e6;
+  color: #6c757d;
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* 警告按钮 */
+.btn-warning {
+  background-color: #ffc107;
+  border: 1px solid #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+  color: #212529;
+}
+
+/* 信息按钮 */
+.btn-info {
+  background-color: #17a2b8;
+  border: 1px solid #17a2b8;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+  color: white;
+}
+
+/* 浅色按钮 */
+.btn-light {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  color: #212529;
+}
+
+.btn-light:hover {
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+  color: #212529;
+}
+
+/* 深色按钮 */
+.btn-dark {
+  background-color: #343a40;
+  border: 1px solid #343a40;
+  color: white;
+}
+
+.btn-dark:hover {
+  background-color: #23272b;
+  border-color: #1d2124;
+  color: white;
+}
+
+/* 链接按钮 */
+.btn-link {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #007bff;
+  padding: 8px 16px;
+}
+
+.btn-link:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* 按钮尺寸 */
+.btn-sm {
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+.btn-lg {
+  font-size: 16px;
+  padding: 12px 24px;
+}
+
+/* 全宽按钮 */
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* 禁用状态通用样式 */
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* 移除所有页面特定的按钮样式，确保全局一致性 */
+.btn-primary, .btn-secondary, .btn-success, .btn-danger, .btn-warning, .btn-info, .btn-light, .btn-dark, .btn-link {
+  border-radius: 4px !important;
+  transform: none !important;
+  box-shadow: none !important;
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif !important;
+}

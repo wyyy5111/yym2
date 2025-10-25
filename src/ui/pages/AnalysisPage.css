@@ -1,0 +1,172 @@
+.analysis-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 40px;
+  padding: 10px 0;
+  position: relative;
+}
+
+.page-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #88E0E1;
+  border-radius: 1.5px;
+  margin: 8px auto 0;
+}
+
+.analysis-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.option-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: width 0.6s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #fff8e6 100%);
+}
+
+.option-card:hover::after {
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+}
+
+.option-icon {
+  font-size: 56px;
+  margin-right: 30px;
+  width: 70px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  color: #ffd700;
+}
+
+.option-card:hover .option-icon {
+  transform: scale(1.15);
+}
+
+.option-card h3 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.option-card:hover h3 {
+  color: #ffd700;
+}
+
+.option-card p {
+  font-size: 16px;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* 装饰性元素 */
+.option-card .card-decoration {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.option-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .analysis-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .option-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 25px;
+    min-height: 300px;
+    justify-content: center;
+  }
+  
+  .option-icon {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .option-card p {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .analysis-options {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .option-card {
+    min-height: 280px;
+  }
+}
+
+@media (min-width: 992px) {
+  .analysis-page {
+    padding: 30px;
+  }
+  
+  .page-title {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+  
+  .option-card h3 {
+    font-size: 26px;
+  }
+  
+  .option-card p {
+    font-size: 17px;
+  }
+}

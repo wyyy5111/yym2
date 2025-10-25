@@ -1,0 +1,160 @@
+/* 欢迎页面样式 */
+.welcome-container {
+  min-height: 100vh;
+  background-image: url('../../assets/img/880706cc1c7a17425a74f0376386517f.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+}
+
+.welcome-content {
+  max-width: 600px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.welcome-header {
+  margin-bottom: 30px;
+}
+
+.welcome-icon {
+  font-size: 60px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.welcome-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2D3047;
+  margin: 0 0 10px 0;
+}
+
+.welcome-subtitle {
+  font-size: 18px;
+  color: #5F6F94;
+  margin: 0;
+  font-weight: 400;
+}
+
+.welcome-message {
+  margin-bottom: 40px;
+  color: #5F6F94;
+  line-height: 1.6;
+}
+
+.welcome-message p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.welcome-features {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-icon {
+  font-size: 32px;
+  background-color: #F5F9FF;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-item p {
+  margin: 0;
+  color: #5F6F94;
+  font-weight: 500;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* 按钮样式由全局button.css提供 */
+
+.welcome-footer {
+  color: #A0A8CC;
+  font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .welcome-content {
+    padding: 35px 25px;
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .welcome-title {
+    font-size: 28px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container {
+    padding: 10px;
+  }
+  
+  .welcome-content {
+    padding: 30px 20px;
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .welcome-title {
+    font-size: 26px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 15px;
+  }
+  
+  .welcome-message p {
+    font-size: 14px;
+  }
+  
+  .welcome-features {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .welcome-actions {
+    gap: 12px;
+  }
+}

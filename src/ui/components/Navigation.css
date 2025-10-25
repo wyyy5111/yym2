@@ -1,0 +1,147 @@
+/* 导航栏基础样式 - 竖屏布局 */
+.navigation {
+  background-color: #fff;
+  border-bottom: 3px solid #F4DC9C;
+  box-shadow: 0 4px 10px rgba(244, 220, 156, 0.2);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 导航栏头部 */
+.nav-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+}
+
+/* 应用品牌样式 */
+.app-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-family: '幼圆', cursive;
+  text-align: center;
+}
+
+.brand-icon {
+  font-size: 28px;
+  margin-right: 8px;
+  transform: rotate(-5deg);
+  animation: float 3s ease-in-out infinite;
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #88E0E1;
+  margin: 0 5px;
+  text-shadow: 2px 2px 0 #fff;
+  transform: rotate(-2deg);
+}
+
+.brand-subtitle {
+  font-size: 14px;
+  color: #F4DC9C;
+  margin: 0;
+  font-style: italic;
+  transform: rotate(1deg);
+}
+
+/* 主导航链接 */
+.main-nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  padding: 5px 0;
+}
+
+.main-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px;
+  color: #2c3e50;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  font-family: '幼圆', cursive;
+  position: relative;
+.main-nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #88E0E1;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: scale(0.95) rotate(-0.5deg);
+}
+
+.main-nav-link:hover {
+  background-color: #E3EAC8;
+  transform: translateY(-2px) rotate(0.5deg);
+}
+
+.main-nav-link:hover::before {
+  opacity: 1;
+}
+
+.main-nav-link.active {
+  background-color: #E3EAC8;
+  font-weight: bold;
+  color: #88E0E1;
+}
+
+.main-nav-link.active::before {
+  opacity: 1;
+  border-color: #88E0E1;
+}
+
+.nav-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* 手绘效果动画 */
+@keyframes float {
+  0% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-5px) rotate(-3deg); }
+  100% { transform: translateY(0) rotate(-5deg); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .navigation {
+    padding: 8px 0;
+  }
+  
+  .brand-icon {
+    font-size: 24px;
+  }
+  
+  .brand-title {
+    font-size: 20px;
+  }
+  
+  .brand-subtitle {
+    font-size: 12px;
+  }
+  
+  .nav-icon {
+    font-size: 16px;
+  }
+  
+  .main-nav-link {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+}

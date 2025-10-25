@@ -1,0 +1,20 @@
+.mindsymphony-page {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* 确保卡片在淡绿色背景上有良好的可读性 */
+.mind-symphony-page .card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 适配现有样式 */
+@media (max-width: 768px) {
+  .mind-symphony-page {
+    padding: 15px;
+  }
+}
